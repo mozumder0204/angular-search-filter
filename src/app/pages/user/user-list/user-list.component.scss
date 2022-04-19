@@ -1,0 +1,44 @@
+.search-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+}
+
+.form-field {
+  min-width: 60px;
+  flex: 1 auto;
+}
+
+.pp {
+  background-color: white;
+  padding: 10px;
+  flex-basis: calc(33.33% - 10px);
+  flex-shrink: 1;
+  box-sizing: border-box;
+
+  margin-right: 5px !important;
+  margin-left: 5px !important;
+  margin-bottom: 10px;
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.card-selected {
+  border: 2px solid #cc0000;
+}
+
+.selection {
+  opacity: 1;
+  cursor: pointer;
+  color: #cc0000;
+  background: #fff;
+  position: absolute;
+  left: -10px;
+  top: -10px;
+  border-radius: 100%;
+  height: 24px;
+  width: 24px;
+}

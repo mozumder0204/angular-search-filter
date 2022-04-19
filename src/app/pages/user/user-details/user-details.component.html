@@ -1,0 +1,29 @@
+<div
+  fxLayout="row"
+  fxLayoutAlign="space-evenly start"
+  *ngIf="data !== undefined"
+>
+  <div fxFlex="50">
+    <div
+      fxFlex="100"
+      class="example-card"
+      style="height: 355px; overflow-y: auto"
+    >
+      <div class="header">
+        <h2>User Details</h2>
+      </div>
+
+      <mat-list>
+        <mat-list-item> Name : {{ data?.name }}</mat-list-item>
+        <mat-list-item> UserName : {{ data?.username }}</mat-list-item>
+        <mat-list-item> Email : {{ data?.email }}</mat-list-item>
+        <mat-list-item>
+          Address : {{ data?.address.suite }},&nbsp;{{
+            data?.address.street
+          }},&nbsp;{{ data?.address.city }}</mat-list-item
+        >
+        <mat-list-item> Phone : {{ data?.phone }}</mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+</div>

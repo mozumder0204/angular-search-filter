@@ -1,0 +1,57 @@
+<div class="search-box">
+  <button mat-button mat-icon-button (click)="OnSearch()" matTooltip="Search">
+    <mat-icon>search</mat-icon>
+  </button>
+
+  <mat-form-field class="form-field">
+    <input
+      matInput
+      type="text"
+      placeholder="Search..."
+      [(ngModel)]="value"
+      (keyup)="OnSearch()"
+    />
+  </mat-form-field>
+
+  <button mat-button mat-icon-button (click)="OnClear()" matTooltip="Clear">
+    <mat-icon>clear</mat-icon>
+  </button>
+</div>
+<br />
+
+<div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column">
+  <div
+    fxLayout="row wrap"
+    fxLayoutGap="10px"
+    fxFlex="100%"
+    fxFlex.sm="50%"
+    fxLayout.lt-sm="column"
+    fxFlex.xs="100%"
+    fxLayoutAlign="flex-start"
+  >
+    <mat-card
+      *ngFor="let item of results; let i = index"
+      fxFlex="0 1 calc(25% - 10px)"
+      fxFlex.lt-md="0 1 calc(33.33% - 10px)"
+      fxFlex.lt-sm="50%"
+      fxFlex.xs="50%"
+      appearance="fill"
+      class="pp"
+      [ngClass]="{ 'card-selected': item.selected }"
+      (click)="onSelectCard(item, i)"
+    >
+      <span *ngIf="item.selected" class="selection">
+        <mat-icon>check_circle</mat-icon>
+      </span>
+      <mat-card-header>
+        <mat-card-subtitle style="color: black">
+          Name:&nbsp;{{ item?.name }} <br />
+          Username:&nbsp;{{ item?.username }}<br />
+          Email:&nbsp;{{ item?.email }}<br />
+        </mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </div>
+</div>
+
+<app-user-details [data]="selectedUser"></app-user-details>
