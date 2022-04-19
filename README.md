@@ -1,6 +1,10 @@
 # Angular-Search-Filter
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
+<br>
+Project Preview :⬇️
+<br>
+https://angular-search-filter.vercel.app
 
 ## Development server
 
